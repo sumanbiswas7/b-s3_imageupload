@@ -1,0 +1,32 @@
+1. Create a bucket , set the bucket policy [use policy generator help yourself]
+i) Bucket Policy - {
+    "Version": "2012-10-17",
+    "Id": "Policy1649666625550",
+    "Statement": [
+        {
+            "Sid": "Stmt1649666624079",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::movizine-imageupload/*"
+        }
+    ]
+}
+ii) set CORS permissions - [
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "PUT",
+            "HEAD",
+            "GET"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": []
+    }
+]
+
+2. Go to IAM and Create policy of allowing putObject and Create a user assign the policy then you'll get SECRET_ACCESS_KEY and SECRET_KEY_ID.
